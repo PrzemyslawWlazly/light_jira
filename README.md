@@ -16,7 +16,7 @@ Krok 1: Klonowanie repozytorium
 Pobierz projekt na swój dysk lokalny:
 
 
-git clone https://github.com/TWÓJ_LINK/light_jira.git
+git clone https://github.com/PrzemyslawWlazly/light_jira
 cd light_jira
 
 Krok 2: Uruchomienie Backend (Django)
