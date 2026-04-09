@@ -1,0 +1,42 @@
+Struktura plików: 
+
+light_jira/
+├── venv/                      # Wirtualne środowisko Pythona (nie wrzucamy na Git)
+├── .gitignore                 # Plik ignorujący (np. venv, node_modules)
+├── backend/                   # --- KOD BACKENDU ---
+│   ├── manage.py
+│   ├── requirements.txt       # Lista zależności Pythona
+│   ├── config/                # Główne ustawienia projektu
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py            # Główny router API
+│   │   ├── asgi.py
+│   │   └── wsgi.py
+│   ├── users/                 # Moduł odpowiedzialny za konta [cite: 83]
+│   │   ├── models.py          # Model użytkownika [cite: 84]
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   └── urls.py
+│   └── board/                 # Moduł projektów, sprintów i zgłoszeń
+│       ├── models.py          # Modele Project, Sprint, Issue, Comment 
+│       ├── serializers.py
+│       ├── views.py
+│       └── urls.py
+└── frontend/                  # --- KOD FRONTENDU ---
+    ├── package.json
+    ├── vite.config.js
+    ├── index.html
+    └── src/
+        ├── main.jsx           # Punkt wejścia Reacta
+        ├── App.jsx            # Główny komponent zarządzający routingiem
+        ├── App.css
+        ├── components/        # Reużywalne klocki UI
+        │   ├── Backlog/
+        │   ├── SprintBoard/
+        │   └── Shared/        # Np. przyciski, modale, formularze
+        ├── pages/             # Całe widoki stron
+        │   ├── Login.jsx
+        │   ├── Dashboard.jsx  # Lista projektów
+        │   └── ProjectView.jsx# Widok konkretnego projektu (Backlog/Tablica)
+        └── services/          # Logika biznesowa i API
+            └── api.js         # Konfiguracja Axios do łączenia z Django
